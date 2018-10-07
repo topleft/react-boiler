@@ -54,6 +54,9 @@
     "react-dom": "^16.4.1"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>setupEnzyme.js"
+    "setupTestFrameworkScriptFile": "<rootDir>/test/setupEnzyme.js",
+    "moduleNameMapper": {
+      "\\.(scss|css)$": "<rootDir>/test/mocks/styleMock.js"
+    }
   }
 }
