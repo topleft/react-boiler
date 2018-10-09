@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+
+$black: #242f40;
+$green: #3CCF8E;
+$grey-light: #E4EDF2;
+$grey-dark: #5B6B82;
+$orange: #FFB34B;
+$white: #FFFFFF;
+$white-tint: #F5FAFD;
+
+$black-med-opacity: rgba(36, 47, 64, 0.5);
+
+$regular-font: Helvetica, Arial, sans-serif;
+$bold-font: Helvetica, Arial, sans-serif;
+$bold-font-weight: 700;
+
+$font-size-base: 1.6rem; // Use browser default font-size, usually 16px
+
+// Font Size Variables:
+//  6.4rem = 64px,
+//  5.0rem = 50px, etc.
+$font-size-64: 6.4rem;
+$font-size-45: 4.5rem;
+$font-size-34: 3.4rem;
+$font-size-21: 2.1rem;
+$font-size-16: $font-size-base;
+$font-size-14: 1.4rem;
+$font-size-11: 1.1rem;
+$font-size-9: 0.9rem;
+
+//Spacing
+$space: 1.5rem;
+
+// Easing
+$easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
+$easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
+$easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+
+
+
+
