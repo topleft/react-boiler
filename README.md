@@ -1,6 +1,8 @@
 ## React Boiler
 
-- Webpack
+- Webpack - for bundling
   - dev setup with Hot Module Reloading
-- Sass
-- Jest and Enzyme
+- Sass - for styling
+- Jest and Enzyme - for testing
+- Babel - for transpiling
+- eslint - for safety
