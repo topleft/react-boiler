@@ -1,10 +1,16 @@
-import './styles.scss';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Header from './components/Header';
+import './styles/main.scss';
 
-module.exports = {
-  hello: () => {
-    console.log('hello');
-  }
-};
 
-console.log('whoop');
-console.log('whoop');
+const App = () => (
+  <div>
+    <Header/>
+  </div>
+);
+
+ReactDOM.render(
+  <App/>,
+  document.getElementById('app')
+);

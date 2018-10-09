@@ -1,0 +1,180 @@
+/*
+ * Defaults Styles
+ **
+ * HTML Reset
+ * Base styles
+ */
+
+ @import 'variables.scss';
+
+ /********************************************************** Viewport */
+
+ @-webkit-viewport {width: device-width;}
+ @-moz-viewport {width: device-width;}
+ @-ms-viewport {width: device-width;}
+ @-o-viewport {width: device-width;}
+ @viewport {width: device-width;}
+
+
+ /********************************************************** Box Sizing *
+   Box Sizing
+   Apply a natural box layout model to all elements - http://paulirish.com/2012/box-sizing-border-box-ftw/
+   border-box polyfill for IE 6/7: https://github.com/Schepp/box-sizing-polyfill#readme
+
+   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+
+ html {
+   box-sizing: border-box;
+   font-size: 62.5%;
+   //for IE scrollbar overlapping content
+   overflow-y: auto;
+ }
+
+ *,
+ *:before,
+ *:after {
+   box-sizing: border-box;
+ }
+
+ /********************************************************** General */
+
+ html,
+ body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+  }
+
+ img {
+   max-width: 100%;
+ }
+
+ a {
+   color: $black;
+   text-decoration: underline;
+   outline: 0;
+
+   &:focus {
+     outline: 0;
+   }
+
+   &:hover,
+   &:active {
+     outline: 0;
+   }
+  }
+
+  button {
+    &:focus,
+    &:active {
+      outline: 0;
+    }
+ }
+
+
+
+ /********************************************************** Typography */
+
+
+ body {
+  background: $white-tint;
+  color: $black;
+  font-family: $regular-font;
+  font-size: $font-size-base; // 16px
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+   margin: 0;
+   padding: 0;
+ }
+
+ p {
+   line-height: 1.5;
+   margin: 0;
+   padding: 0 0 $space;
+ }
+
+ ul,
+ ol,
+ dl {
+   line-height: 1.5;
+   list-style: none;
+   margin: 0 0 0 $space;
+   padding: 0 0 ($space/2);
+ }
+
+ p  ul,
+ ul ul,
+ ol ul,
+ p  ol,
+ ul ol,
+ ol ol {
+   padding-bottom: 0;
+ }
+
+ strong {
+   font-weight: bold;
+ }
+
+ code {
+   font-size: $font-size-16;
+   line-height: 1.5;
+ }
+ input,
+ textarea {
+   -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased;
+ }
+
+ /**********************************************************
+   Clearfix
+   css/app/utilities/_clearfix
+ */
+
+ /*
+  *
+  * http://nicolasgallagher.com/micro-clearfix-hack/
+  *
+  * For modern browsers
+  * 1. The space content is one way to avoid an Opera bug when the
+  *    contenteditable attribute is included anywhere else in the document.
+  *    Otherwise it causes space to appear at the top and bottom of elements
+  *    that are clearfixed.
+  * 2. The use of `table` rather than `block` is only necessary if using
+  *    `:before` to contain the top-margins of child elements.
+  */
+
+ .clearfix:before,
+ .clearfix:after {
+   content: ' '; /* 1 */
+   display: table; /* 2 */
+ }
+
+ .clearfix:after {
+   clear: both;
+ }
+
+ /**
+  * For IE 6/7 only
+  * Include this rule to trigger hasLayout and contain floats.
+  */
+ .clearfix {
+   zoom: 1;
+ }
+
+ .nowrap {
+   white-space: nowrap;
+ }
+
+ .full-height {
+   height: 100%;
+ }
