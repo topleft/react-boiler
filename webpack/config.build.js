@@ -18,7 +18,7 @@ module.exports = {
   },
   output: {
     path: BUILD_PATH,
-    filename: '[name].[chunkhash].js'
+    filename: '[name].[chunkhash].js',
   },
   optimization: {
     runtimeChunk: 'single',

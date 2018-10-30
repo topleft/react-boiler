@@ -18,7 +18,8 @@ module.exports = {
   },
   output: {
     path: BUILD_PATH,
-    filename: '[name].[hash].js'
+    filename: '[name].[hash].js',
+    publicPath: '/'
   },
   optimization: {
     runtimeChunk: 'single',
@@ -51,7 +52,11 @@ module.exports = {
         ]
       },
       {
-        test: /\.(jpg|jpeg|png|gif|svg)$/,
+        test: /\.svg$/,
+        loaders: 'svg-inline-loader',
+      },
+      {
+        test: /\.(jpg|jpeg|png|gif)$/,
         loaders: ['url-loader?limit=25000', 'img-loader']
       },
       {
@@ -62,7 +67,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-    modules: [VENDOR_PATH],
   },
   plugins: [
     new CleanWebpackPlugin([BUILD_PATH], {root: ROOT_PATH}),
@@ -73,6 +77,7 @@ module.exports = {
     })
   ],
   devServer: {
-    contentBase: BUILD_PATH
+    contentBase: BUILD_PATH,
+    historyApiFallback: true
   }
 };

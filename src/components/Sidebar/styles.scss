@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+
+.sidebar {
+  align-items: center;
+  border-right: 1px solid $grey-light;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  left: 0;
+  padding-bottom: 10%;
+  position: fixed;
+  top: 0;
+  width: $sidebar-width;
+
+}

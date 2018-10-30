@@ -1,0 +1,11 @@
+@import '../../styles/variables.scss';
+
+
+.sidebar-link {
+  width: $space*1.66;
+  margin-bottom: $space*3;
+
+  & .active {
+    width: 100%;
+  }
+}
