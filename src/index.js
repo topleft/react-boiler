@@ -5,13 +5,23 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import './styles/main.scss';
 
-
-function Wow() {
-  return <h1>Wow</h1>;
+function Conversations() {
+  return <h1>Conversations</h1>;
 }
-
-function Home() {
-  return <h1>Home</h1>;
+function Dashboard() {
+  return <h1>Dashboard</h1>;
+}
+function Files() {
+  return <h1>Files</h1>;
+}
+function Events() {
+  return <h1>Events</h1>;
+}
+function Sessions() {
+  return <h1>Sessions</h1>;
+}
+function Settings() {
+  return <h1>Settings</h1>;
 }
 
 function NotFound() {
@@ -24,8 +34,12 @@ const App = () => (
       <div className='main-content'>
         <Sidebar/>
         <Switch>
-          <Route path='/home' component={Home}></Route>
-          <Route path='/wow' component={Wow}></Route>
+          <Route path='/dashboard' component={Dashboard}></Route>
+          <Route path='/sessions' component={Sessions}></Route>
+          <Route path='/events' component={Events}></Route>
+          <Route path='/files' component={Files}></Route>
+          <Route path='/conversations' component={Conversations}></Route>
+          <Route path='/settings' component={Settings}></Route>
           <Route component={NotFound}></Route>
         </Switch>
       </div>

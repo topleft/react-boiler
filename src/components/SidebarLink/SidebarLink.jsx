@@ -9,7 +9,9 @@ const SidebarLink = (props) => {
   console.log(props);
   return (
     <div className='sidebar-link'>
-      <NavLink to={to} activeClassName='pop'>{children}</NavLink>
+      <NavLink to={to}>
+        <span className='sidebar-link--icon'>{children}</span>
+      </NavLink>
     </div>
   );
 }

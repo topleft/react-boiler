@@ -2,10 +2,28 @@
 
 
 .sidebar-link {
-  width: $space*1.66;
+  display: flex;
+  justify-content: center;
   margin-bottom: $space*3;
+  position: relative;
+  width: 100%;
+
+  &--icon svg {
+    height: $space*1.66;
+  }
 
   & .active {
-    width: 100%;
+    &:before {
+      background-color: $blue;
+      content: '';
+      display: block;
+      height: 40px;
+      left: 0;
+      position: absolute;
+      top: -8px;
+      width: 5px;
+      border-radius: 0 5px 5px 0;
+      box-shadow: 1px 2px 12px $blue-shadow;
+    }
   }
 }

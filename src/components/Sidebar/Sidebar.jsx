@@ -7,7 +7,7 @@ import InlineSVG from 'svg-inline-react';
 import dashboardIcon from '../../static/icons/dashboard_icon.svg';
 import conversationsIcon from '../../static/icons/conversations_icon.svg';
 import filesboardIcon from '../../static/icons/files_board_icon.svg';
-import meetingsIcon from '../../static/icons/meetings_icon.svg';
+import eventsIcon from '../../static/icons/events_icon.svg';
 import sessionsIcon from '../../static/icons/sessions_icon.svg';
 import settingsIcon from '../../static/icons/settings_icon.svg';
 
@@ -22,33 +22,33 @@ class Sidebar extends React.Component {
   get links() {
     return [
       {
-        to: '/wow',
-        label: 'Wow',
+        to: '/dashboard',
+        label: 'Dashboard',
         icon: dashboardIcon,
       },
       {
-        to: '/home',
-        label: 'Home',
-        icon: meetingsIcon
-      },
-      {
-        to: '/home',
-        label: 'Home',
+        to: '/sessions',
+        label: 'sessions',
         icon: sessionsIcon
       },
       {
-        to: '/home',
-        label: 'Home',
+        to: '/events',
+        label: 'events',
+        icon: eventsIcon
+      },
+      {
+        to: '/files',
+        label: 'Files',
         icon: filesboardIcon
       },
       {
-        to: '/home',
-        label: 'Home',
+        to: '/conversations',
+        label: 'Conversations',
         icon: conversationsIcon
       },
       {
-        to: '/home',
-        label: 'Home',
+        to: '/Settings',
+        label: 'Settings',
         icon: settingsIcon
       },
     ];
@@ -69,9 +69,7 @@ class Sidebar extends React.Component {
     console.log(this.props)
     return (
       <nav className='sidebar'>
-        <div className='sidebar--icon-container'>
-          {this.renderLinks()}
-        </div>
+        {this.renderLinks()}
       </nav>
     );
   }
