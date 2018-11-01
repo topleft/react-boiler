@@ -10,6 +10,7 @@ import filesboardIcon from '../../static/icons/files_board_icon.svg';
 import eventsIcon from '../../static/icons/events_icon.svg';
 import sessionsIcon from '../../static/icons/sessions_icon.svg';
 import settingsIcon from '../../static/icons/settings_icon.svg';
+import logo from '../../static/icons/logo.svg';
 
 class Sidebar extends React.Component {
   propTypes = {};
@@ -66,11 +67,15 @@ class Sidebar extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
-      <nav className='sidebar'>
-        {this.renderLinks()}
-      </nav>
+      <div className='sidebar'>
+        <div className='sidebar--logo'>
+          <InlineSVG src={logo}/>
+        </div>
+        <nav className='sidebar--nav'>
+          {this.renderLinks()}
+        </nav>
+      </div>
     );
   }
 }
