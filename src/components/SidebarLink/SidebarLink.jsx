@@ -6,7 +6,6 @@ import './styles.scss';
 
 const SidebarLink = (props) => {
   const {to, children} = props;
-  console.log(props);
   return (
     <div className='sidebar-link'>
       <NavLink to={to}>

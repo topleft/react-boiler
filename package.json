@@ -59,7 +59,8 @@
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/test/setupEnzyme.js",
     "moduleNameMapper": {
-      "\\.(scss|css)$": "<rootDir>/test/mocks/styleMock.js"
+      "\\.(scss|css|svg)$": "<rootDir>/test/mocks/styleMock.js",
+      "\\.(svg)$": "<rootDir>/test/mocks/styleMock.js"
     }
   }
 }
