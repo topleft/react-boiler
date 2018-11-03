@@ -1,10 +1,10 @@
 // import React from 'react';
 // import {shallow} from 'enzyme';
-// import __Template from './__Template';
+// import Template from './Template';
 
-// describe('__Template', () => {
-//   it('should render', () => {
-//     const wrapper = shallow(<__Template/>);
+// describe('template', () => {
+//   it('template', () => {
+//     const wrapper = shallow(<Template/>);
 //     expect(wrapper.exists()).toBe(true);
 //   })
 // });

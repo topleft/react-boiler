@@ -1,1 +1,1 @@
-module.exports = require('../__Template');
+module.exports = require('./__Template');

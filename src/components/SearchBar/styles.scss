@@ -1,0 +1,11 @@
+@import '../../styles/variables.scss';
+
+
+.search-bar {
+  height: $sidebar-width;
+  position: fixed;
+  border-bottom: 1px solid $grey-light;
+  top: 0;
+  left: $sidebar-width;
+  width: 100%;
+}
