@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+
+.navbar {
+  display: flex;
+
+  & a {
+    margin-right: $space*1.5;
+    text-decoration: none;
+  }
+
+  & .active {
+    padding-bottom: 1px;
+    border-bottom: solid 2px $primary-accent;
+  }
+}

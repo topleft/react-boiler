@@ -40,7 +40,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         use: [
           'style-loader',
           MiniCssExtractPlugin.loader,
@@ -60,8 +60,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
-    modules: [VENDOR_PATH],
+    extensions: ['.js', '.jsx']
   },
   plugins: [
     new CleanWebpackPlugin([BUILD_PATH], { root: ROOT_PATH }),

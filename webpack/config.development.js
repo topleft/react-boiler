@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const path = require('path');
 
@@ -41,7 +41,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         use: [
           'style-loader',
           MiniCssExtractPlugin.loader,
@@ -61,8 +61,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
-    modules: [VENDOR_PATH],
+    extensions: ['.js', '.jsx']
   },
   plugins: [
     new CleanWebpackPlugin([BUILD_PATH], {root: ROOT_PATH}),
@@ -73,6 +72,7 @@ module.exports = {
     })
   ],
   devServer: {
-    contentBase: BUILD_PATH
+    contentBase: BUILD_PATH,
+    historyApiFallback: true
   }
 };

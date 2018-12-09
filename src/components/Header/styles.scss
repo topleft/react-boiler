@@ -2,6 +2,9 @@
 
 .header {
   margin: $space*5 auto;
-  color: $grey-dark;
   width: 50%;
+
+  &__links {
+    margin-top: $space;
+  }
 }
