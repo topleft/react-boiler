@@ -7,18 +7,22 @@ const NavBar = (props) => {
   return (
     <div className='navbar'>
       {
-        props.links.map((link, i) => (
-          <NavLink key={i} {...link} activeClassName={'active'}/>
+        props.links.map(({to, children}, i) => (
+          <NavLink
+            key={i}
+            to={to}>
+            {children}
+          </NavLink>
         ))
       }
     </div>
   );
-}
+};
 
 NavBar.propTypes = {
   links: PropTypes.arrayOf({
     to: PropTypes.string,
-    label: PropTypes.string
+    children: PropTypes.string,
   })
 };
 
