@@ -51,7 +51,7 @@
  }
 
  a {
-   color: $black;
+   color: $default-font-color;
    text-decoration: underline;
    outline: 0;
 
@@ -79,7 +79,7 @@
 
  body {
   background: $white-tint;
-  color: $black;
+  color: $default-font-color;
   font-family: $regular-font;
   font-size: $font-size-base; // 16px
   -webkit-font-smoothing: antialiased;

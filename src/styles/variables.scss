@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
-
 $black: #242f40;
 $green: #3CCF8E;
 $grey-light: #E4EDF2;
@@ -10,6 +9,9 @@ $white: #FFFFFF;
 $white-tint: #F5FAFD;
 
 $black-med-opacity: rgba(36, 47, 64, 0.5);
+
+$default-font-color: $grey-dark;
+$primary-accent: $orange;
 
 $regular-font: Helvetica, Arial, sans-serif;
 $bold-font: Helvetica, Arial, sans-serif;

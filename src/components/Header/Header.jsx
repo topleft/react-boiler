@@ -7,6 +7,9 @@ class Header extends React.Component {
       <header className='header'>
         <h1>topleft</h1>
         <h2>react boiler</h2>
+        <div className={'header__links'}>
+          {this.props.children}
+        </div>
       </header>
     );
   }
