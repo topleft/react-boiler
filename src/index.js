@@ -7,31 +7,34 @@ import NavBar from './components/NavBar';
 import Header from './components/Header';
 import './styles/main.scss';
 
-
 const Page = (props) => {
-  return <h1 className='page__title'>{props.title}</h1>
+  return <h1 className='page__title'>{props.title}</h1>;
 };
 
 Page.propTypes = {
   title: PropTypes.string,
-}
+};
+
+const Home = (props) => <Page {...props} title={'Home'}/>;
+const PageOne = (props) => <Page {...props} title={'PageOne'}/>;
+const PageTwo = (props) => <Page {...props} title={'PageTwo'}/>;
 
 const links = [
   {
     to: '/home',
     label: 'home',
     children: 'Home',
-    render: (props) => <Page {...props} title={'Home'}/>
+    render: Home
   },{
     to: '/page-one',
     label: 'page-one',
     children: 'Page One',
-    render: (props) => <Page {...props} title={'PageOne'}/>
+    render: PageOne
   },{
     to: '/page-two',
     label: 'page-two',
     children: 'Page Two',
-    render: (props) => <Page {...props} title={'PageTwo'}/>
+    render: PageTwo
   }
 ];
 
