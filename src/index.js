@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
+import { hot } from 'react-hot-loader';
 import NavBar from './components/NavBar';
 import Header from './components/Header';
 import './styles/main.scss';
@@ -50,7 +51,9 @@ const App = () => (
   </BrowserRouter>
 );
 
+const HotApp = hot(module)(App);
+
 ReactDOM.render(
-  <App/>,
+  <HotApp/>,
   document.getElementById('app')
 );

@@ -14,7 +14,7 @@ const BUILD_PATH = path.join(__dirname, '..', 'dist');
 module.exports = {
   mode: 'production',
   entry: {
-    index: ['babel-polyfill', APP_PATH + '/index.js']
+    index: ['@babel/polyfill', APP_PATH + '/index.js']
   },
   output: {
     path: BUILD_PATH,
