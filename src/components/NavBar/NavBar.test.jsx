@@ -1,17 +1,22 @@
-// import React from 'react';
-// import {shallow} from 'enzyme';
-// import __Template from './__Template';
+import React from 'react';
+import { MemoryRouter } from 'react-router-dom';
+import {shallow, render} from 'enzyme';
+import NavBar from './NavBar';
 
-// describe('__Template', () => {
-//   it('should render', () => {
-//     const wrapper = shallow(<__Template/>);
-//     expect(wrapper.exists()).toBe(true);
-//   });
-// });
+describe('NavBar', () => {
+  it('should render', () => {
+    const wrapper = shallow(<NavBar links={[]}/>);
+    expect(wrapper.exists()).toBe(true);
+  });
 
-describe('sanity', () => {
-  it('template', () => {
-    expect(true).toBe(true);
+  it('should render children', () => {
+    const wrapper = render(
+      <MemoryRouter>
+        <NavBar links={[{to: '/', children: 'Test'}]}/>
+      </MemoryRouter>
+    );
+
+    expect(wrapper.text()).toBe('Test');
   });
 });
 
