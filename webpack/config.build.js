@@ -31,7 +31,15 @@ module.exports = {
           chunks: 'all'
         }
       }
-    }
+    },
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      }),
+      new OptimizeCssAssetsPlugin()
+    ]
   },
   module: {
     rules: [
@@ -62,16 +70,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx']
-  },
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true
-      }),
-      new OptimizeCssAssetsPlugin()
-    ]
   },
   plugins: [
     new CleanWebpackPlugin([BUILD_PATH], { root: ROOT_PATH }),
