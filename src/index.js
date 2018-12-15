@@ -1,18 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import { BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Header from './components/Header';
 import './styles/main.scss';
 
-const Home = () => <h1>Home</h1>;
-const PageOne = () => <h1>PageOne</h1>;
-const PageTwo = () => <h1>PageTwo</h1>;
+
+const Page = (props) => {
+  return <h1 className='page__title'>{props.title}</h1>
+};
+
+Page.propTypes = {
+  title: PropTypes.string,
+}
 
 const links = [
-  {to: '/home', children: 'Home', component: Home},
-  {to: '/page-one', children: 'Page One', component: PageOne},
-  {to: '/page-two', children: 'Page Two', component: PageTwo}
+  {
+    to: '/home',
+    label: 'home',
+    children: 'Home',
+    render: (props) => <Page {...props} title={'Home'}/>
+  },{
+    to: '/page-one',
+    label: 'page-one',
+    children: 'Page One',
+    render: (props) => <Page {...props} title={'PageOne'}/>
+  },{
+    to: '/page-two',
+    label: 'page-two',
+    children: 'Page Two',
+    render: (props) => <Page {...props} title={'PageTwo'}/>
+  }
 ];
 
 const App = () => (
@@ -23,7 +42,7 @@ const App = () => (
       </Header>
       <div style={{marginLeft: '7.5rem'}}>
         <Switch>
-          { links.map(({to, component}, i) => <Route key={i} path={to} component={component}/>)}
+          { links.map(({to, render}, i) => <Route key={i} path={to} render={render}/>)}
           <Redirect to={'/home'}/>
         </Switch>
       </div>
