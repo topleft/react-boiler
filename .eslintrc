@@ -20,12 +20,12 @@
     "semi": [
       1,
     "always"
-    ]
-  },
-  "global": {
-    "cy": true,
-    "before": true,
-    "beforeEach": true
+    ],
+    "global": {
+      "cy": true,
+      "before": true,
+      "beforeEach": true
+    }
   },
   "env": {
     "es6": true,

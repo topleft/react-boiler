@@ -1,20 +1,21 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const path = require('path');
 
 const ROOT_PATH = path.join(__dirname, '..');
 const APP_PATH = path.join(__dirname, '..', 'src');
-const VENDOR_PATH = path.join(__dirname, '..', 'node_modules');
 const BUILD_PATH = path.join(__dirname, '..', 'dist');
 
 
 module.exports = {
   mode: 'production',
   entry: {
-    index: ['babel-polyfill', APP_PATH + '/index.js']
+    index: ['@babel/polyfill', APP_PATH + '/index.js']
   },
   output: {
     path: BUILD_PATH,
@@ -30,7 +31,15 @@ module.exports = {
           chunks: 'all'
         }
       }
-    }
+    },
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      }),
+      new OptimizeCssAssetsPlugin()
+    ]
   },
   module: {
     rules: [
@@ -64,9 +73,16 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin([BUILD_PATH], { root: ROOT_PATH }),
-    new HtmlWebpackPlugin({template: path.join(APP_PATH, 'template.html')}),
+    new HtmlWebpackPlugin({
+      template: path.join(APP_PATH, 'template.html'),
+      files: {
+        css: [ 'styles.css' ],
+        js: [ 'app.js' ]
+      }
+    }),
     new MiniCssExtractPlugin({
-      filename: 'style.[contenthash].css',
+      filename: '[name].styles.css',
+      chunkFilename: '[id].[hash].css',
     })
   ],
 };

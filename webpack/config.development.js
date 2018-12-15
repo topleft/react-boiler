@@ -14,7 +14,7 @@ const BUILD_PATH = path.join(__dirname, '..', 'dist');
 module.exports = {
   mode: 'development',
   entry: {
-    index: ['babel-polyfill', APP_PATH + '/index.js']
+    index: ['@babel/polyfill', APP_PATH + '/index.js']
   },
   output: {
     path: BUILD_PATH,
@@ -65,7 +65,6 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin([BUILD_PATH], {root: ROOT_PATH}),
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({template: path.join(APP_PATH, 'template.html')}),
     new MiniCssExtractPlugin({
       filename: 'style.[contenthash].css',

@@ -1,6 +1,7 @@
 ## React Boiler
 
-- React Router - for routing
+- React
+- React Router
 - Webpack - for bundling
   - dev setup with Hot Module Reloading
 - Sass - for styling
