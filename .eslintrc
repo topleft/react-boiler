@@ -22,6 +22,11 @@
     "always"
     ]
   },
+  "global": {
+    "cy": true,
+    "before": true,
+    "beforeEach": true
+  },
   "env": {
     "es6": true,
     "node": true,
