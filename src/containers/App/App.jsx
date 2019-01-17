@@ -13,7 +13,7 @@ const links = [
     to: '/home',
     className: 'home',
     label: 'Home',
-    render: Home
+    render: function HomeComp (props) {return <Home {...props}/>;}
   },{
     to: '/page-one',
     className: 'page-one',
