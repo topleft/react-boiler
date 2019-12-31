@@ -12,7 +12,7 @@ describe('NavBar', () => {
   it('should render children', () => {
     const wrapper = render(
       <MemoryRouter>
-        <NavBar links={[{to: '/', children: 'Test'}]}/>
+        <NavBar links={[{to: '/', label: 'Test'}]}/>
       </MemoryRouter>
     );
 
