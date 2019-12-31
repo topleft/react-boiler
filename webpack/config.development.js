@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const path = require('path');
@@ -64,7 +64,7 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   plugins: [
-    new CleanWebpackPlugin([BUILD_PATH], {root: ROOT_PATH}),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({template: path.join(APP_PATH, 'template.html')}),
     new MiniCssExtractPlugin({
       filename: 'style.[contenthash].css',

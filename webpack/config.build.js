@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const path = require('path');
@@ -32,12 +32,9 @@ module.exports = {
         }
       }
     },
+    minimize: true,
     minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true
-      }),
+      new TerserPlugin(),
       new OptimizeCssAssetsPlugin()
     ]
   },
@@ -72,7 +69,7 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   plugins: [
-    new CleanWebpackPlugin([BUILD_PATH], { root: ROOT_PATH }),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.join(APP_PATH, 'template.html'),
       files: {
