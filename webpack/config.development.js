@@ -5,9 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const path = require('path');
 
-const ROOT_PATH = path.join(__dirname, '..');
 const APP_PATH = path.join(__dirname, '..', 'src');
-const VENDOR_PATH = path.join(__dirname, '..', 'node_modules');
 const BUILD_PATH = path.join(__dirname, '..', 'dist');
 
 

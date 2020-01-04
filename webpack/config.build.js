@@ -7,7 +7,6 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const path = require('path');
 
-const ROOT_PATH = path.join(__dirname, '..');
 const APP_PATH = path.join(__dirname, '..', 'src');
 const BUILD_PATH = path.join(__dirname, '..', 'dist');
 
