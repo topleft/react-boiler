@@ -1,10 +1,14 @@
 import { Map } from 'immutable';
 
-import {
-  RESET_COUNT,
-  INCREMENT_COUNT,
-  DECREMENT_COUNT
-} from '../actions/home';
+const RESET_COUNT = 'RESET_COUNT';
+const INCREMENT_COUNT = 'INCREMENT_COUNT';
+const DECREMENT_COUNT = 'DECREMENT_COUNT';
+
+export const actions = {
+  resetCount: () => ({ type: RESET_COUNT }),
+  incrementCount: () => ({ type: INCREMENT_COUNT }),
+  decrementCount: () => ({ type: DECREMENT_COUNT })
+}
 
 export const initialState = Map({
   count: 0

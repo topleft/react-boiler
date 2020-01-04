@@ -1,6 +1,16 @@
+import { bindActionCreators } from 'redux';
 import { combineReducers } from 'redux-immutable';
 import { Map } from 'immutable';
-import home, { initialState as homeInitialState } from './home';
+import home, {
+  initialState as homeInitialState,
+  actions as homeActions
+} from './home';
+
+export function boundActions(dispatch) {
+  return {
+    home: bindActionCreators( homeActions, dispatch ),
+  };
+}
 
 const reducers = {
   home

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { bindActions } from '../../actions';
+import { boundActions } from '../../reducers';
 
 import Page from 'components/Page';
 
@@ -36,9 +36,9 @@ class Home extends React.Component {
 Home.propTypes = {
   home: PropTypes.object,
   homeActions: PropTypes.object,
-}
+};
 
 export default connect(
   function mapStateToProps( state ){ return { home: state.get('home') }; },
-  function mapDispatchToProps( dispatch ){ return { homeActions: bindActions(dispatch).home }; }
+  function mapDispatchToProps( dispatch ){ return { homeActions: boundActions(dispatch).home }; }
 )(Home);
