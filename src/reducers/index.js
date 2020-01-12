@@ -1,23 +1,23 @@
 import { bindActionCreators } from 'redux';
 import { combineReducers } from 'redux-immutable';
 import { Map } from 'immutable';
-import home, {
-  initialState as homeInitialState,
-  actions as homeActions
-} from './home';
+import count, {
+  initialState as countInitialState,
+  actions as countActions
+} from './count';
 
 export function boundActions(dispatch) {
   return {
-    home: bindActionCreators( homeActions, dispatch ),
+    home: bindActionCreators( countActions, dispatch ),
   };
 }
 
 const reducers = {
-  home
+  count
 };
 
 export const initialState = Map({
-  home: homeInitialState
+  count: countInitialState
 });
 
 export default combineReducers( reducers );

@@ -8,7 +8,6 @@ const path = require('path');
 const APP_PATH = path.join(__dirname, '..', 'src');
 const BUILD_PATH = path.join(__dirname, '..', 'dist');
 
-
 module.exports = {
   mode: 'development',
   entry: {
@@ -59,7 +58,8 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
+    alias: { 'react-dom': '@hot-loader/react-dom'  }
   },
   plugins: [
     new CleanWebpackPlugin(),

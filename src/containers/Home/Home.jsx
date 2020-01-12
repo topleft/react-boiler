@@ -10,8 +10,8 @@ class Home extends React.Component {
   render() {
 
     const {
-      home,
-      homeActions
+      count,
+      countActions
     } = this.props;
 
     return (
@@ -19,12 +19,12 @@ class Home extends React.Component {
         <h3>Redux Implementation</h3>
         <section style={{marginTop: '1rem'}}>
           <div>
-            Count: {home.get('count')}
+            Count: {count.get('count')}
           </div>
           <div>
-            <button onClick={homeActions.incrementCount}>+</button>
-            <button onClick={homeActions.decrementCount}>-</button>
-            <button onClick={homeActions.resetCount}>reset</button>
+            <button onClick={countActions.incrementCount}>+</button>
+            <button onClick={countActions.decrementCount}>-</button>
+            <button onClick={countActions.resetCount}>reset</button>
           </div>
         </section>
       </Page>
@@ -34,11 +34,11 @@ class Home extends React.Component {
 
 
 Home.propTypes = {
-  home: PropTypes.object,
-  homeActions: PropTypes.object,
+  count: PropTypes.object,
+  countActions: PropTypes.object,
 };
 
 export default connect(
-  function mapStateToProps( state ){ return { home: state.get('home') }; },
-  function mapDispatchToProps( dispatch ){ return { homeActions: boundActions(dispatch).home }; }
+  function mapStateToProps( state ){ return { count: state.get('count') }; },
+  function mapDispatchToProps( dispatch ){ return { countActions: boundActions(dispatch).home }; }
 )(Home);

@@ -8,13 +8,13 @@ export const actions = {
   resetCount: () => ({ type: RESET_COUNT }),
   incrementCount: () => ({ type: INCREMENT_COUNT }),
   decrementCount: () => ({ type: DECREMENT_COUNT })
-}
+};
 
 export const initialState = Map({
   count: 0
 });
 
-export default function home( state=initialState, action ) {
+export default function count( state=initialState, action={} ) {
   switch(action.type) {
     case RESET_COUNT:
       return state.set('count', 0);
